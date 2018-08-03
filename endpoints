@@ -1,0 +1,9 @@
+NAME                          ENDPOINTS                          AGE
+heketi-db-storage-endpoints   10.2.6.7:1,10.2.6.8:1,10.2.6.9:1   23d
+heketi-storage                                                   23d
+NAME                          ENDPOINTS                          AGE
+heketi-db-storage-endpoints   10.2.6.7:1,10.2.6.8:1,10.2.6.9:1   23d
+heketi-storage                                                   23d
+NAME                          ENDPOINTS                          AGE
+heketi-db-storage-endpoints   10.2.6.7:1,10.2.6.8:1,10.2.6.9:1   23d
+heketi-storage                                                   23d

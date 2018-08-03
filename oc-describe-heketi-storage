@@ -1,0 +1,13 @@
+Name:              heketi-storage
+Namespace:         glusterfs
+Labels:            glusterfs=heketi-storage-service
+                   heketi=storage-service
+Annotations:       description=Exposes Heketi service
+Selector:          glusterfs=heketi-storage-pod
+Type:              ClusterIP
+IP:                172.30.164.18
+Port:              heketi  8080/TCP
+TargetPort:        8080/TCP
+Endpoints:         
+Session Affinity:  None
+Events:            <none>

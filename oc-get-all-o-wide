@@ -1,0 +1,19 @@
+NAME                   DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR            AGE       CONTAINERS   IMAGES                           SELECTOR
+ds/glusterfs-storage   3         3         1         3            1           glusterfs=storage-host   23d       glusterfs    rhgs3/rhgs-server-rhel7:latest   glusterfs=storage-pod
+NAME                                                    REVISION   DESIRED   CURRENT   TRIGGERED BY
+deploymentconfigs/glusterblock-storage-provisioner-dc   1          1         1         config
+deploymentconfigs/heketi-storage                        1          1         1         config
+NAME                    HOST/PORT                                           PATH      SERVICES         PORT      TERMINATION   WILDCARD
+routes/heketi-storage   heketi-storage-glusterfs.apps-siemens.amosdemo.io             heketi-storage   <all>                   None
+NAME                                             READY     STATUS    RESTARTS   AGE       IP            NODE
+po/glusterblock-storage-provisioner-dc-1-lr9sb   1/1       Running   0          22h       10.128.2.29   azure-infra
+po/glusterfs-storage-9rgjw                       0/1       Running   0          23d       10.2.6.7      azure-cns-1
+po/glusterfs-storage-gspt4                       1/1       Running   1          23d       10.2.6.8      azure-cns-2
+po/glusterfs-storage-lfr86                       0/1       Running   1          23d       10.2.6.9      azure-cns-3
+po/heketi-storage-1-rlfct                        0/1       Running   0          22h       10.128.2.31   azure-infra
+NAME                                       DESIRED   CURRENT   READY     AGE       CONTAINERS                 IMAGES                                       SELECTOR
+rc/glusterblock-storage-provisioner-dc-1   1         1         1         23d       glusterblock-provisioner   rhgs3/rhgs-gluster-block-prov-rhel7:latest   deployment=glusterblock-storage-provisioner-dc-1,deploymentconfig=glusterblock-storage-provisioner-dc,glusterfs=block-storage-provisioner-pod
+rc/heketi-storage-1                        1         1         0         23d       heketi                     rhgs3/rhgs-volmanager-rhel7:latest           deployment=heketi-storage-1,deploymentconfig=heketi-storage,glusterfs=heketi-storage-pod
+NAME                              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE       SELECTOR
+svc/heketi-db-storage-endpoints   ClusterIP   172.30.218.96   <none>        1/TCP      23d       <none>
+svc/heketi-storage                ClusterIP   172.30.164.18   <none>        8080/TCP   23d       glusterfs=heketi-storage-pod

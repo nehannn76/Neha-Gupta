@@ -1,0 +1,12 @@
+Name:              heketi-db-storage-endpoints
+Namespace:         glusterfs
+Labels:            <none>
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP:                172.30.218.96
+Port:              <unset>  1/TCP
+TargetPort:        1/TCP
+Endpoints:         10.2.6.7:1,10.2.6.8:1,10.2.6.9:1
+Session Affinity:  None
+Events:            <none>
